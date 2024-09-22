@@ -1,43 +1,16 @@
 const express = require("express");
 const JWT_SECRET = "rohitsampannavar"
+const {createuserRoutes} = require('./routes/user');
+const {createcouseRoutes} = require('./routes/course');
+
 
 
 const app = express();
 app.use(express.json());
+createuserRoutes(app);
+createcouseRoutes(app);
 
 
-app.post("/user/signup", function(req,res){
-res.json({
-    message:"Signyp endpoint"
-})
-})
-
-app.post("/user/login", function(req,res){
-res.json({
-    message:"login endpoint"
-})
-})
-
-
-app.get("/user/purchases", function(req,res){
-    res.json({
-        message:"Purchase endpoint"
-    })
-})
-
-
-
-app.post("/course/purchase", function(req,res){
-    res.json({
-        message:"Purchase endpoint"
-    })
-})
-
-app.get("/courses", function(req,res){
-res.json({
-    message:"Courses Endpoint"
-})
-})
 
 
 
