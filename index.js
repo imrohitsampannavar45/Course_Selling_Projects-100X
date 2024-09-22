@@ -6,16 +6,37 @@ const app = express();
 app.use(express.json());
 
 
-app.post("/login", function(req,res)=>{
-
+app.post("/user/signup", function(req,res){
+res.json({
+    message:"Signyp endpoint"
+})
 })
 
-app.post("/signup", function(req,res)=>{
-
+app.post("/user/login", function(req,res){
+res.json({
+    message:"login endpoint"
+})
 })
 
-app.post("/purchase-course", function(req,res)=>{
 
+app.get("/user/purchases", function(req,res){
+    res.json({
+        message:"Purchase endpoint"
+    })
+})
+
+
+
+app.post("/course/purchase", function(req,res){
+    res.json({
+        message:"Purchase endpoint"
+    })
+})
+
+app.get("/courses", function(req,res){
+res.json({
+    message:"Courses Endpoint"
+})
 })
 
 
